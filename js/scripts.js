@@ -44,7 +44,7 @@ setGameElements();
 
 var playerPointsElem = document.getElementById('js-playerPoints'),
 	playerNameElem = document.getElementById('js-playerName'),
-	computerPointsElem = document.getElementById('js-computerResult');
+	computerPointsElem = document.getElementById('js-computerPoints');
 	
 function newGame() {
 	player.name = prompt('Type Your name');
@@ -109,18 +109,24 @@ function checkRoundWinner(playerPick, computerPick) {
 			computer.score++;
 			console.log(computer.score);
 		}
+	setGamePoints();
 		
 }
 function setGamePoints() {
 	playerPointsElem.innerHTML = player.score;
 	computerPointsElem.innerHTML = computer.score;
-
+	endGame();
 }
 
-// function endGame() {
-// 	if (player.score > 9 || computer.score > 9) {
-// 		gameState = 'ended';
-// 		setGameElements();
-// 	}
-// }
+function endGame() {
+	if (player.score > 9 || computer.score > 9) {
+			if (player.score > computer.score) {
+				alert("You are like a Neo in Matrix! You really can defeat program");
+			}
+			else
+				alert("You have failed! Program will launch Skynet in 3 seconds...");
+		gameState = 'ended';
+		setGameElements();
+	}
+}
 
