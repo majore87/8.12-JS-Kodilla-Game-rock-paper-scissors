@@ -121,10 +121,10 @@ function setGamePoints() {
 function endGame() {
 	if (player.score > 9 || computer.score > 9) {
 			if (player.score > computer.score) {
-				alert("You are like a Neo in Matrix! You really can defeat program");
+				alert("Your score: " + player.score + " points!" + " You are like a Neo in Matrix! You really can defeat program");
 			}
 			else
-				alert("You have failed! Program will launch Skynet in 3 seconds...");
+				alert("You have failed! Your score: " + player.score + " points" + " Program will launch Skynet in 3 seconds...");
 		gameState = 'ended';
 		setGameElements();
 	}
